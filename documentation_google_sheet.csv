@@ -1,0 +1,33 @@
+=== TAB 1: SYSTEM OVERVIEW & GETTING STARTED ===
+Category,Topic,Details,Human Note / Pro-Tip
+Overview,What is LOOP?,LOOP is your AI-powered feedback hub. It gathers customer comments from everywhere—support tickets app reviews sales calls—and automatically figures out sentiment key themes and action items.,No more reading through 500 row spreadsheets by hand!
+Quick Start,Step 1: Logging In,Navigate to http://localhost:3000/login and enter your team email and password.,"Check the 'Demo Accounts' tab for ready-to-use logins."
+Quick Start,Step 2: Dashboard View,The main screen gives you an instant pulse on customer sentiment theme trends and total feedback volume.,Filter by date range or sentiment to spot sudden issues early.
+Quick Start,Step 3: Uploading Feedback,Click 'Feedback Inbox' in the sidebar -> 'Bulk CSV Upload' -> Choose your feedback file.,"You can copy/paste directly from Google Sheets!"
+Quick Start,Step 4: Ask LOOP AI,Go to 'Ask LOOP' and type plain English questions like 'What are users saying about our mobile app?',Claude AI searches your feedback records and cites exact quotes.
+Quick Start,Step 5: Executive Digests,Click 'VoC Reports' -> 'Generate Report' to create a weekly summary for leadership.,Export as PDF with one click for board meetings or team syncs.
+
+=== TAB 2: DEMO USERS & TEAM ROLES ===
+Role,Email,Password,Permissions & Access,Who is this for?
+Workspace Admin,admin@acme.com,password123,"Full control: Add/remove team members create themes upload feedback triage inbox generate reports",Product Leaders & Team Leads
+Data Analyst,analyst@acme.com,password123,"Upload feedback tag themes update status triage inbox ask AI generate digests",Product Managers & UX Researchers
+View Only,viewer@acme.com,password123,"Read-only access: View dashboard charts read feedback list ask AI Q&A read reports",Stakeholders Executives & Engineers
+
+=== TAB 3: GOOGLE SHEETS IMPORT FORMAT ===
+Column Name,Required?,Accepted Header Aliases,Description,Example Value
+content,YES,"content, feedback, text, comment","The exact verbatim text written by your customer.",The dashboard takes too long to load on 4G networks.
+channel,NO,"channel, source","Where the feedback came from. (Default: SUPPORT)",SUPPORT / APP_STORE / NPS / SALES / COMMUNITY
+customer_label,NO,"customer_label, label, feature","Optional tag to organize by feature or feedback type.",Mobile Performance / UI Design / Bug Report
+
+=== TAB 4: SAMPLE FEEDBACK DATA FOR TESTING ===
+content,channel,customer_label,Suggested Action
+"The app takes over 15 seconds to load the analytics dashboard on mobile networks.",SUPPORT,Mobile Performance,Assign to Frontend Team to optimize payload size
+"Loving the new AI taxonomy feature! Saved our product team hours of manual tagging.",APP_STORE,Feature Feedback,Highlight in marketing customer testimonials
+"The export to CSV button crashes when downloading reports with over 5,000 rows.",SUPPORT,Bug Report,Pass to Engineering as high priority bug fix
+"Would love to see integrated Slack notifications whenever high negative sentiment spikes occur.",COMMUNITY,Feature Request,Add to Q3 product roadmap candidates
+"Customer service response time has been excellent. Resolved our SSO configuration issue within 10 minutes.",SUPPORT,Customer Service,Share compliment with Customer Success team
+"Pricing is a bit high for early-stage startups. A smaller starter tier would be great.",SALES,Pricing,Send feedback to Product Marketing & Sales Ops
+"Dark mode UI looks incredible! Smooth animations and very responsive layout.",APP_STORE,UI Design,Kudos to Design team
+"Bulk CSV upload hangs on 100+ items when internet connection is slow.",COMMUNITY,Performance,Optimize async bulk ingestion worker queue
+"Need the ability to assign feedback items directly to Jira or Linear issues.",SALES,Integration,Evaluate Jira/Linear OAuth integration API
+"The VoC executive report summary is very accurate and saves us hours before weekly product reviews.",NPS,Executive Summary,Maintain weekly report schedule for leadership

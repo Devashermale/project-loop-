@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text-primary font-sans antialiased overflow-x-hidden selection:bg-primary/30 selection:text-white;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.07) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.05) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.03) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-text-primary tracking-tight font-semibold;
+  }
+}
+
+/* Enterprise UI Styling & Micro-interactions */
+@layer utilities {
+  .glass-card {
+    background: rgba(18, 23, 34, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(38, 47, 66, 0.8);
+    @apply rounded-xl shadow-glass transition-all duration-200;
+  }
+
+  .glass-card-hover {
+    @apply hover:border-primary/40 hover:shadow-glow hover:-translate-y-0.5;
+  }
+
+  .btn-gradient {
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+    @apply text-white font-semibold px-4 py-2 rounded-lg transition-all duration-200 hover:brightness-110 active:scale-[0.98] shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30;
+  }
+
+  .accent-glow {
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.25);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0F19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #252F45;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366F1;
+}
+
+/* Triage Status Badges */
+.badge-new {
+  @apply bg-indigo-500/10 text-indigo-400 border border-indigo-500/25 px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider;
+}
+.badge-reviewed {
+  @apply bg-amber-500/10 text-amber-400 border border-amber-500/25 px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider;
+}
+.badge-actioned {
+  @apply bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider;
+}
+
+/* Sentiment Indicators */
+.sentiment-pos {
+  @apply bg-emerald-500/15 text-emerald-400 border border-emerald-500/25 px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider;
+}
+.sentiment-neu {
+  @apply bg-slate-500/15 text-slate-300 border border-slate-500/25 px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider;
+}
+.sentiment-neg {
+  @apply bg-rose-500/15 text-rose-400 border border-rose-500/25 px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider;
+}
+
