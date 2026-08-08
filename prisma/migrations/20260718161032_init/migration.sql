@@ -1,3 +1,5 @@
+
+
 -- CreateTable
 CREATE TABLE "Workspace" (
     "id" TEXT NOT NULL,
